@@ -1,0 +1,40 @@
+<?php
+/**
+ * Copyright © 2016 SalesIds. All rights reserved.
+ * See COPYING.txt for license details.
+ */
+
+// @codingStandardsIgnoreFile
+?>
+<?php
+/**
+ * Product infinite scroll block
+ *
+ * @var $block \SalesIds\CatalogInfiniteScroll\Block\ProductList\InfiniteScroll
+ */
+// use SalesIds\CatalogInfiniteScroll\Block\ProductList\InfiniteScroll;
+?>
+<div id="infinite-scroll-container"></div>
+<script type="text/x-magento-init">
+    {
+        "#infinite-scroll-container": {
+            "productListCatalogInfiniteScroll": {
+                "primeCache": <?php /* @escapeNotVerified */ echo $block->getPrimeCache() ?>,
+                "scrollMode": "<?php echo $block->getScrollMode() ?>",
+                "scrollPageLimit": <?php /* @escapeNotVerified */ echo $block->getScrollPageLimit() ?>,
+                "continueBtnText": "<?php echo $block->escapeJsQuote($block->getContinueBtnText(), '"') ?>",
+                "loaderImageSrc": "<?php echo $block->getLoaderImageSrc() ?>",
+                "showTextLoader": <?php /* @escapeNotVerified */ echo $block->getShowTextLoader() ?>,
+                "textLoader": "<?php echo $block->escapeJsQuote($block->getTextLoader(), '"') ?>",
+                "ajaxRequestTimeout": <?php /* @escapeNotVerified */ echo $block->getAjaxRequestTimeout() ?>,
+                "scrollToTopEnabled": <?php /* @escapeNotVerified */ echo $block->getIsScrollToTopEnabled() ?>,
+                "scrollToTopDistance": <?php /* @escapeNotVerified */ echo $block->getScrollToTopDistance() ?>,
+                "scrollToTopEasing": "<?php echo $block->getScrollToTopEasing() ?>",
+                "scrollToTopDuration": <?php /* @escapeNotVerified */ echo $block->getScrollToTopDuration() ?>,
+                "scrollToTopOffset": <?php /* @escapeNotVerified */ echo $block->getScrollToTopOffset() ?>,
+                "currentPageUrl": "<?php echo $block->getCurrentPageUrl() ?>",
+                "nextPageUrl": "<?php echo $block->getNextPageUrl() ?>"
+            }
+        }
+    }
+</script>
